@@ -1,7 +1,6 @@
 // External packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 // Inquirer prompts for userResponses
@@ -10,8 +9,8 @@ const questions = [
     // Name
     {
         type: 'input',
-        name: 'fullName',
         message: "What is your name??",
+        name: 'fullName',
         default: 'Full Name',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -23,8 +22,8 @@ const questions = [
     // GitHub Username
     {
         type: 'input',
-        name: 'githubName',
         message: "What is your GitHub username??",
+        name: 'githubName',
         default: 'GitHub Username',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -36,8 +35,8 @@ const questions = [
     // User Email Address
     {
         type: 'input',
-        name: 'emailAddress',
         message: "What is your email address?",
+        name: 'emailAddress',
         default: 'Email Address',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -49,8 +48,8 @@ const questions = [
     // Project Title
     {
         type: 'input',
-        name: 'projectTitle',
         message: "What would you like the name of your README.md to be called?",
+        name: 'projectTitle',
         default: 'Project Title',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -62,8 +61,8 @@ const questions = [
     // Project Description
     {
         type: 'input',
-        name: 'projectDescription',
         message: "How would you best describe your project?",
+        name: 'projectDescription',
         default: 'Project Description',
         validate: function (answer) {
             if (answer.length < 15) {
@@ -75,8 +74,8 @@ const questions = [
     // Installation Instructions
     {
         type: 'input',
-        name: 'installationInstructions',
         message: "Explain instructions of how User is to install the application.",
+        name: 'installationInstructions',
         default: 'Installation Instructions',
         validate: function (answer) {
             if (answer.length < 15) {
@@ -88,56 +87,78 @@ const questions = [
     // Usage Information
     {
         type: 'input',
-        name: 'usageInformation',
         message: "If available, provide instructions for use.",
+        name: 'usageInformation',
         default: 'Usage Information',
     },
     // Contribution Guidelines
     {
         type: 'input',
-        name: 'contributionGuidelines',
         message: "Please list all contributors that assisted in creating the application.",
+        name: 'contributionGuidelines',
         default: 'Contribution Guidelines',
     },
     // Test Instructions
     {
         type: 'input',
-        name: 'testInstructions',
         message: "What are the proper test instructions?",
+        name: 'testInstructions',
         default: 'Test Instructions',
     },
     // Credit Help
     {
         type: 'input',
-        name: 'creditHelp',
         message: "Attribute all those (people, videos, books, etc.) who have helped you complete your application.",
+        name: 'creditHelp',
         default: 'Credit Help'
     },
     // License
     {
         type: 'list',
-        name: 'license',
         message: "Choose a license for your project.",
         choices: ['Zilb', 'The Artistic License 2.0', 'Eclipse Public Lincense', 'The Perl License'],
+        name: 'license',
         default: 'License',
     },
     // Features
     {
         type: 'list',
-        name: 'features',
         message: "What features do you want to identify?",
+        name: 'features',
         default: 'Features',
     },
 ];
 
-// TODO: The final swing function to initialize the README app!
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//     return fs.writeFile(fileName, data, err => {
+//         if (err) {
+//             return console.log(err);
+//         }
+
+//         console.log("Great news! You've created your README!")
+//     });
+// }
+
+function writeToFile(data) {
+    return fs.writeFile('../README.md', data, (err) => 
+    err ? console.log(err) : console.log("Great news! You've created your README!"));
+}
 
 function init() {
     inquirer.prompt(questions).then((data) => {
-        fs.writeFile("./output/README.md", generateMarkdown(data), () => {
-        console.log("Yay! Your README has been created!")
-        })
-      }
-    )}
+        console.log(JSON.stringify(data, null, " "));
+        data.getLicense = getLicense(data.license);
+        writeToFile("../README.md", data);
+    });
+}
+// TODO: Create a function to initialize app
+// function init() {
+//     inquirer.prompt(questions).then((answers) => {
+//         writeToFile("../script/README.md", generateMarkdown({...answers}));
+//         console.log("Hold on just a moment, please");
+//     });
+// }
 
-   init();
+// Function call to initialize app
+init();
