@@ -1,0 +1,14 @@
+{
+    "name": "static-site",
+    "version": "1.0.0",
+    "description": "A high-quality, professional README.md generator that includes: Title, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "inquirer": "^8.2.4"
+    }
+  }
