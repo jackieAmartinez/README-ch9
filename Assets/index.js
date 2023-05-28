@@ -120,13 +120,6 @@ const questions = [
         name: 'license',
         default: 'License',
     },
-    // Features
-    {
-        type: 'list',
-        message: "What features do you want to identify?",
-        name: 'features',
-        default: 'Features',
-    },
 ];
 
 // TODO: Create a function to write README file
