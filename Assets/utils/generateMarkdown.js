@@ -84,8 +84,8 @@ function renderLicenseBadge(license) {
   ## Test
   ${data.testInstructions}
   
-  
-  ${renderLicenseSection(data.license)}
+  ## License
+  ${data.license}
   `;
   }
   

@@ -10,8 +10,8 @@ const questions = [
     // Name
     {
         type: 'input',
-        message: "What is your name??",
         name: 'fullName',
+        message: "What is your name??",
         default: 'Full Name',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -23,8 +23,8 @@ const questions = [
     // GitHub Username
     {
         type: 'input',
-        message: "What is your GitHub username??",
         name: 'githubName',
+        message: "What is your GitHub username??",
         default: 'GitHub Username',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -36,8 +36,8 @@ const questions = [
     // User Email Address
     {
         type: 'input',
-        message: "What is your email address?",
         name: 'emailAddress',
+        message: "What is your email address?",
         default: 'Email Address',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -49,8 +49,8 @@ const questions = [
     // Project Title
     {
         type: 'input',
-        message: "What would you like the name of your README.md to be called?",
         name: 'projectTitle',
+        message: "What would you like the name of your README.md to be called?",
         default: 'Project Title',
         validate: function (answer) {
             if (answer.length < 5) {
@@ -62,8 +62,8 @@ const questions = [
     // Project Description
     {
         type: 'input',
-        message: "How would you best describe your project?",
         name: 'projectDescription',
+        message: "How would you best describe your project?",
         default: 'Project Description',
         validate: function (answer) {
             if (answer.length < 15) {
@@ -75,8 +75,8 @@ const questions = [
     // Installation Instructions
     {
         type: 'input',
-        message: "Explain instructions of how User is to install the application.",
         name: 'installationInstructions',
+        message: "Explain instructions of how User is to install the application.",
         default: 'Installation Instructions',
         validate: function (answer) {
             if (answer.length < 15) {
@@ -88,44 +88,44 @@ const questions = [
     // Usage Information
     {
         type: 'input',
-        message: "If available, provide instructions for use.",
         name: 'usageInformation',
+        message: "If available, provide instructions for use.",
         default: 'Usage Information',
     },
     // Contribution Guidelines
     {
         type: 'input',
-        message: "Please list all contributors that assisted in creating the application.",
         name: 'contributionGuidelines',
+        message: "Please list all contributors that assisted in creating the application.",
         default: 'Contribution Guidelines',
     },
     // Test Instructions
     {
         type: 'input',
-        message: "What are the proper test instructions?",
         name: 'testInstructions',
+        message: "What are the proper test instructions?",
         default: 'Test Instructions',
     },
     // Credit Help
     {
         type: 'input',
-        message: "Attribute all those (people, videos, books, etc.) who have helped you complete your application.",
         name: 'creditHelp',
+        message: "Attribute all those (people, videos, books, etc.) who have helped you complete your application.",
         default: 'Credit Help'
     },
     // License
     {
         type: 'list',
+        name: 'license',
         message: "Choose a license for your project.",
         choices: ['Zilb', 'The Artistic License 2.0', 'Eclipse Public Lincense', 'The Perl License'],
-        name: 'license',
         default: 'License',
     },
     // Features
     {
         type: 'list',
-        message: "What features do you want to identify?",
         name: 'features',
+        message: "What features do you want to identify?",
         default: 'Features',
     },
 ];
@@ -134,11 +134,10 @@ const questions = [
 
 function init() {
     inquirer.prompt(questions).then((data) => {
-            fs.writeFile("./Output/README.md", generateMarkdown(data), () => {
-            console.log("I'm so proud of you, Champ. Your README was successfully made.")
-            })
-        }
+        fs.writeFile("./output/README.md", generateMarkdown(data), () => {
+        console.log("Yay! Your README has been created!")
+        })
+      }
     )}
 
-
-init();
+   init();
