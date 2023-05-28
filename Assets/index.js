@@ -1,6 +1,7 @@
 // External packages needed for this application
-const inquirer = require('inquirer');
 const fs = require('fs');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 // Inquirer prompts for userResponses
@@ -133,18 +134,37 @@ const questions = [
 //     });
 // }
 
-function writeToFile(data) {
-    return fs.writeFile('../README.md', data, (err) => 
-    err ? console.log(err) : console.log("Great news! You've created your README!"));
-}
+
+
+
+
+// function writeToFile(data) {
+//     return fs.writeFile('./output/README.md', data, (err) => 
+//     err ? console.log(err) : console.log("Great news! You've created your README!"));
+// }
+
+// function init() {
+//     inquirer.prompt(questions).then((data) => {
+//         console.log(JSON.stringify(data, null, " "));
+//         // data.getLicense = getLicense(data.license);
+//         writeToFile("../README.md", data);
+//     });
+// }
+
+
+
 
 function init() {
     inquirer.prompt(questions).then((data) => {
-        console.log(JSON.stringify(data, null, " "));
-        data.getLicense = getLicense(data.license);
-        writeToFile("../README.md", data);
-    });
-}
+        fs.writeFile("./assets/output/README.md", generateMarkdown(data), () => {
+        console.log("Great news! You've created your README!")
+        })
+      }
+    )}
+
+
+
+
 // TODO: Create a function to initialize app
 // function init() {
 //     inquirer.prompt(questions).then((answers) => {
