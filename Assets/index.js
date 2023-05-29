@@ -156,7 +156,7 @@ const questions = [
 
 function init() {
     inquirer.prompt(questions).then((data) => {
-        fs.writeFile("./assets/output/README.md", generateMarkdown(data), () => {
+        fs.writeFile("./results/README.md", generateMarkdown(data), () => {
         console.log("Great news! You've created your README!")
         })
       }

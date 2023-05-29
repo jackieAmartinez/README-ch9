@@ -1,4 +1,4 @@
-# oewruowieuoiweur
+# Bob Timothy's Greatest Creation
 
 [![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)
 
@@ -13,21 +13,21 @@
 * [test](#testInstructions)
 
 ## Project Description
-owieurowieurowiuer
+It's a little bit of this, a little bit of that, but mostly razzamatazz
 
 ## Installation Instructions
-owieuroiweuroiweur
+You open VSCode, find the proper folder, and follow your heart
 
 ## Usage Information
-oiueroiueroiuwe
+Like I said, open VSCode, find the proper folder, and follow your heart
 
 ## Contact-me
-* Name - ur9oeiruwoeiurweur
-* Email - oweiruowieruiweur
-* GitHub - [oiewurowieuowieur](https://github.com/oiewurowieuowieur/)
+* Name - Bob Timothy
+* Email - BobTimothy@yolo.com
+* GitHub - [BobTimothyOnline](https://github.com/BobTimothyOnline/)
 
 ## Credits
-owieurowieurowiu
+Bob Timothy, Bill Timberly, YouTube, my mom
 
 ## Features
 undefined
@@ -36,7 +36,7 @@ undefined
 undefined
 
 ## Test
-rowieruowieruwoieur
+Shake a little, run around in a circle, see Instructions
 
 
 
